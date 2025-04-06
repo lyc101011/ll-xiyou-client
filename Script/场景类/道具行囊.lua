@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-04-03 22:06:51
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2024-11-12 04:22:53
+-- @Last Modified time: 2025-04-06 15:53:09
 -- @Author: baidwwy
 -- @Date:   2023-09-12 12:13:54
 -- @Last Modified by:   baidwwy
@@ -387,7 +387,7 @@ function 场景类_道具行囊:显示(dt,x,y)
 			 	-- 发送数据(3757)
 			end
 		elseif self.资源组[55]:事件判断() then
-         tp.窗口.对话栏:文本("","","出售道具栏特定物品，该功能出售的物品无法恢复！请谨慎操作！”",{"一键出售","我点错了"})
+         	tp.窗口.对话栏:文本("","","出售道具栏特定物品，该功能出售的物品无法恢复！请谨慎操作！”",{"一键出售","我点错了"})
 
 
 		elseif self.任务按钮:事件判断() then

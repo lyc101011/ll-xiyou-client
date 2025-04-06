@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-04-14 22:22:15
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2025-04-05 21:57:37
+-- @Last Modified time: 2025-04-06 15:47:03
 -- @作者: baidwwy
 -- @邮箱:  313738139@qq.com
 -- @创建时间:   2015-11-13 10:12:10
@@ -49,7 +49,6 @@ function hpclient:发送(...)
 	  --self:断开()
 end
 function hpclient:断开()
-		tp.提示:写入("break..")
 	self._hp:Stop()
 end
 function hpclient:取连接ID()
@@ -104,7 +103,6 @@ function hpclient:OnReceivePack(Data)
 	print("PACK:",#Data)
 end
 function hpclient:OnClose(...)
-			tp.提示:写入("break..")
   self.重连触发=false
 	if self.连接断开 then
 	    return __gge.safecall(self.连接断开,self,...)

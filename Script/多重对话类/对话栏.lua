@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-08-21 11:43:34
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2024-11-12 06:26:33
+-- @Last Modified time: 2025-04-06 19:44:16
 local 场景类_对话栏 = class()
 local bw = require("gge包围盒")
 local floor = math.floor
@@ -527,7 +527,7 @@ function 场景类_对话栏:事件解析(事件,地图1,名称,名称1)
 		self.文本栏焦点 = false
 		return 0
 	elseif 事件 == "一键出售" then
-		发送数据(3785,{shijian=事件})
+		发送数据(3785,self.fujia)
 		self.可视 = false
 		self.文本栏焦点 = false
 		return 0

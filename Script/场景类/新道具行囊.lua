@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-06-13 16:59:55
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2024-12-13 11:27:31
+-- @Last Modified time: 2025-04-06 18:43:41
 local bw = require("gge包围盒")(0,0,100,22)
 local bw1= require("gge包围盒")(0,0,100,17)
 local box = 引擎.画矩形
@@ -411,7 +411,6 @@ function 场景类_道具行囊:重置窗口()
 		self.物品[q]:置物品(tp.道具列表[q])
 	end
 	self.点击类型="道具"
-	self.选择类型="道具"
 end
 
 function 场景类_道具行囊:切换界面()
@@ -1223,7 +1222,7 @@ function 场景类_道具行囊:旧界面显示(dt,x,y)
 				tp.窗口.灵饰.可视 = false
 			end
 		elseif self.出售按钮:事件判断() then --，也可通过鼠标左键抓取拖拽实现出售 tp.场景.抓取物品==nil and
-				tp.窗口.对话栏:文本("","","出售道具栏特定物品，该功能出售的物品无法恢复！请谨慎操作！”",{"一键出售","我点错了"})
+			tp.窗口.对话栏:文本("","","出售道具栏特定物品，该功能出售的物品无法恢复！请谨慎操作！”",{"一键出售","我点错了"}, nil, {page=self.Pages, type=self.点击类型})
 		end
 	end
 

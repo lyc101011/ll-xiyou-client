@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-12-14 19:52:27
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2025-01-04 12:58:18
+-- @Last Modified time: 2025-04-06 21:59:40
 -- @Author: baidwwy
 -- @Date:   2024-06-13 16:59:55
 -- @Last Modified by:   baidwwy
@@ -65,7 +65,7 @@ function 系统类_时辰:初始化(根)
 	-- self.图标9 =按钮.创建(资源:载入('common/item.wdf',"网易WDF动画",2932859338),0,0,1,true)----分角色
 	self.图标9 =按钮.创建(资源:载入('wzife.wdf',"网易WDF动画",0xDDDD99DC),0,0,1,true)----分角色
 	self.图标10 =按钮.创建(资源:载入('沉默.wdf',"网易WDF动画",0x10000000),0,0,1,true)   --图鉴
-	self.图标11 =按钮.创建(资源:载入('沉默.wdf',"网易WDF动画",0x10000004),0,0,1,true)   --回收图鉴
+	-- self.图标11 =按钮.创建(资源:载入('沉默.wdf',"网易WDF动画",0x10000004),0,0,1,true)   --回收图鉴
 	self.隐藏 = 按钮.创建(资源:载入('沉默.wdf',"网易WDF动画",0x10000007),0,0,1,true)
 	self.神兵异兽榜 = 按钮.创建(资源:载入('common/wzife.wdf',"网易WDF动画",0x3C48DED5),0,0,1,true) ---神兵异兽榜 0x3C48DED5
 	self.十八奇技 = 按钮.创建(资源:载入('wzife.wdf',"网易WDF动画",0xD30FC952),0,0,1,true) ---十八奇技
@@ -166,7 +166,7 @@ function 系统类_时辰:显示(dt,x,y)
 		self.图标8:更新(x,y)
 		self.图标9:更新(x,y)
 		self.图标10:更新(x,y)
-		self.图标11:更新(x,y)
+		-- self.图标11:更新(x,y)
 		self.神兵异兽榜:更新(x,y)
 		self.十八奇技:更新(x,y)
 		self.战前施法:更新(x,y)
@@ -181,11 +181,11 @@ self.精炼系统:更新(x,y)
 			self.图标7:显示(15+21,70+30)-----抽奖
 			self.图标8:显示(15,70+40)----挂机
 			-- self.图标5:显示(15+30+2,70+40)---进化系统图标 ----------待开放
-			self.图标11:显示(14,110+40)---回收技能图鉴
+			-- self.图标11:显示(14,110+40)---回收技能图鉴
 		    self.图标9:显示(15+30+30,70+37)---分角色
 		    self.神兵异兽榜:显示(15+30+30+3,73)---
 		    self.十八奇技:显示(15+30+3,150+2)---
-		    self.战前施法:显示(15+30+45,150+15)---
+		    self.战前施法:显示(15+30+3,110+40)---
 		    -- self.图标3:显示(150,5)--- 不显示
 		    self.精炼系统:显示(120,125)---
 		end
@@ -235,13 +235,13 @@ self.精炼系统:更新(x,y)
 		end
      elseif self.图标10:事件判断() then
         tp.窗口.图鉴查看:打开()
-     elseif self.图标11:事件判断() then
-     	发送数据(195) --自动回收
-		-- if tp.窗口.礼包界面.可视 then
-		--  	tp.窗口.礼包界面:打开()
-		-- else
-		--     发送数据(121.1,{类型="首冲奖励"})
-		-- end
+  --    elseif self.图标11:事件判断() then
+  --    	发送数据(195) --自动回收
+		-- -- if tp.窗口.礼包界面.可视 then
+		-- --  	tp.窗口.礼包界面:打开()
+		-- -- else
+		-- --     发送数据(121.1,{类型="首冲奖励"})
+		-- -- end
      elseif self.隐藏:事件判断() then
             self.隐藏图标= not self.隐藏图标
      elseif self.神兵异兽榜:事件判断() then
@@ -310,8 +310,8 @@ self.精炼系统:更新(x,y)
             tp.提示:自定义(x-42,y+27,"排行榜")
         elseif self.日历:是否选中(x,y) and tp.选中窗口==0 and not tp.武神坛角色 then
             tp.提示:自定义(x-42,y+27,"玩法指引")
-        elseif self.图标11:是否选中(x,y) and tp.选中窗口==0 and not tp.武神坛角色 then
-            tp.提示:自定义(x-42,y+27,"自动回收")
+        -- elseif self.图标11:是否选中(x,y) and tp.选中窗口==0 and not tp.武神坛角色 then
+        --     tp.提示:自定义(x-42,y+27,"自动回收")
         elseif self.神兵异兽榜:是否选中(x,y) and tp.选中窗口==0 and not tp.武神坛角色 then
             tp.提示:自定义(x-42,y+27,"神兵异兽榜")
         elseif self.十八奇技:是否选中(x,y) and tp.选中窗口==0 and not tp.武神坛角色 then

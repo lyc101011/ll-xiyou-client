@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-09-08 18:20:46
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2025-04-05 21:44:10
+-- @Last Modified time: 2025-04-06 15:48:13
 封包加密=require("Script/网络/封包加密")
 local 数据记录=""
 function 回调:初始化()
@@ -15,7 +15,6 @@ function 回调:数据到达2(序号,内容,时间)
 	客户端:数据到达(序号)
 end
 function 回调:发送数据(序号,内容,数组转换)
-	tp.提示:写入("xh.."..tostring(序号).."neirong"..tostring(内容))
 	if 内容==nil then
 		内容="1"
 	end
@@ -40,7 +39,6 @@ function 回调:发送数据(序号,内容,数组转换)
 end
 
 function 回调:数据到达(s1,s2)
-		tp.提示:写入("xh.."..tostring(s1).."neirong"..tostring(s2))
 	if s1==0 or s2=="" then return  end
 	local 数据 = {}
 	数据 = table.loadstring(s2)
