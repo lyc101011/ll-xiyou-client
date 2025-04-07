@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-09-11 20:07:40
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2024-09-12 16:33:40
+-- @Last Modified time: 2025-04-08 00:05:07
 -- @Author: baidwwy
 -- @Date:   2023-09-25 12:05:55
 -- @Last Modified by:   baidwwy
@@ -507,7 +507,7 @@ function 丰富文本类:显示(x,y,a)
 								elseif 引擎.鼠标弹起(0) then--and tp.选中窗口 == 0 then
 									tp:丰富文本回调行走(v.回调)
 								else
-									tp:丰富文本回调(v.回调)
+									tp:丰富文本回调(v.回调, v)
 								end
 								-- if v.按钮 and self.左键按下 then
 								-- 		显示x ,显示y0 = 显示x +1,显示y0+1

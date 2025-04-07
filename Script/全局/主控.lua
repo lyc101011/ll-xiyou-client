@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-08-21 11:43:24
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2025-01-04 11:57:20
+-- @Last Modified time: 2025-04-08 00:10:43
 local 场景类_场景 = class()
 local ceil = math.ceil
 local floor = math.floor
@@ -783,7 +783,7 @@ function 判断队长()
 	return false
 end
 
-function 场景类_场景:丰富文本回调(sj)
+function 场景类_场景:丰富文本回调(sj, v)
 	local x = 分割文本(sj,"*")
 	if x[3] == "npc查询" and tp.选中窗口 == 0 then
 		self.提示:npc回调(鼠标.x,鼠标.y,{地图=x[2],x=self.假人信息[x[2]][x[1]].x,y=self.假人信息[x[2]][x[1]].y})

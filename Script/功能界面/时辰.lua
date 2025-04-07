@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-12-14 19:52:27
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2025-04-06 21:59:40
+-- @Last Modified time: 2025-04-07 22:17:25
 -- @Author: baidwwy
 -- @Date:   2024-06-13 16:59:55
 -- @Last Modified by:   baidwwy
@@ -185,7 +185,7 @@ self.精炼系统:更新(x,y)
 		    self.图标9:显示(15+30+30,70+37)---分角色
 		    self.神兵异兽榜:显示(15+30+30+3,73)---
 		    self.十八奇技:显示(15+30+3,150+2)---
-		    self.战前施法:显示(15+30+3,110+40)---
+		    self.战前施法:显示(14,110+40)---
 		    -- self.图标3:显示(150,5)--- 不显示
 		    self.精炼系统:显示(120,125)---
 		end

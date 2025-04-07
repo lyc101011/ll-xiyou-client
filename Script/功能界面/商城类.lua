@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-02-21 16:09:59
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2024-11-12 02:18:57
+-- @Last Modified time: 2025-04-08 00:51:47
 -----------
 -- @脚本作者: 熙熙哥
 -- @邮箱:  2481510317@qq.com
@@ -252,6 +252,11 @@ function 商城类:打开()
 					self.物品数据[x类[n]].数量的=#self.数据[x类[n]]
 					self.物品数据[x类[n]][i].编号 = n
 					self.物品数据[x类[n]][i].价格=self.数据[x类[n]][i].价格
+
+					if self.数据[x类[n]][i].参数 ~= nil then
+						self.物品数据[x类[n]][i].物品.附带技能 = self.数据[x类[n]][i].参数
+						self.物品数据[x类[n]][i].物品.特效 = self.数据[x类[n]][i].参数
+					end
 				end
 			elseif x类[n]=="宝宝" then
 				for i=1,#self.数据[x类[n]] do
@@ -455,7 +460,6 @@ function 商城类:显示(dt,x,y) --294
 		else
 			if self.商品编号~=0 then
 				if not 判定数字合法(self.输入框:取文本()) then return  引擎.场景.常规提示:打开("请输入正确的数量") end
-
 					self.发送信息 = {
 						编号 = self.商品编号,--self.物品数据[self.分类][self.商品编号].编号,
 						位置 = self.商品编号,

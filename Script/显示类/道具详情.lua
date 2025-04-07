@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-12-14 19:52:27
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2025-04-07 00:15:28
+-- @Last Modified time: 2025-04-08 00:32:29
 -- @Author: baidwwy
 -- @Date:   2024-08-21 11:43:36
 -- @Last Modified by:   baidwwy
@@ -117,15 +117,14 @@ function 系统类_提示框:道具行囊(x,y,item,jd,lv)
 	self.道具文本:添加文本(item.介绍)
 	local zbwbgd = self.道具文本.显示表.高度+30
 	local zls = item.总类
-
-				if item.名称=="淬灵石"  then
-				 if item.特性~=nil then
-				 	self.道具文本:添加文本(format("#Y/附加特性：%s",item.特性.技能))
-				 	self.道具文本:添加文本(format("#Y/附加级别：%s",item.特性.等级))
-			else
-				self.道具文本:添加文本(format("#Y/暂未使用"))
-end
-end
+	if item.名称=="淬灵石"  then
+		if item.特性~=nil then
+		 	self.道具文本:添加文本(format("#Y/附加特性：%s",item.特性.技能))
+		 	self.道具文本:添加文本(format("#Y/附加级别：%s",item.特性.等级))
+		else
+			self.道具文本:添加文本(format("#Y/暂未使用"))
+		end
+	end
 
 	if zls == 1 then
 		local gs = ""
