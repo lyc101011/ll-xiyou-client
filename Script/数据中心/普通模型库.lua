@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2023-08-31 22:54:45
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2024-11-10 20:16:52
+-- @Last Modified time: 2025-04-09 21:51:12
 
 --======================================================================--
 function 引擎.取模型(ch,wq,qw,锦衣)
@@ -17,10 +17,15 @@ function 引擎.取模型(ch,wq,qw,锦衣)
 	if ch == "巫蛮儿" or ch == "杀破狼" or ch == "羽灵神" or ch == "偃无师"  or ch == "桃夭夭"  or ch == "鬼潇潇"  or ch == "逍遥生" or ch == "舞天姬"   then
 	   	s = wq
 	end
-	ch = ch..s
-	if 锦衣~=nil then
- 		ch=锦衣.."_"..ch
-	end
+    if ch == nil then
+        ch = '默认'
+    else
+        ch = ch..s
+        if 锦衣~=nil then
+            ch=锦衣.."_"..ch
+        end
+    end
+
 	if PutongModel[ch] then
 	    for i=1,3 do
 	    	if PutongModel[ch]["chs_"..i] then
@@ -47,7 +52,11 @@ end
 --1.普通站立  2.普通走路  3.WDF文件
 --======================================================================--
 PutongModel={}
-
+PutongModel["默认"]={
+    chs_1 = 0x0CC00001
+    ,chs_2 = 0x0CC00001
+    ,chs_3 = "aaa.wdf"
+    }
 PutongModel["影精灵_棒"]={
    chs_1 = 0x00000939
     ,chs_2 =0x00000940

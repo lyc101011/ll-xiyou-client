@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-04-03 22:06:51
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2024-06-06 05:03:15
+-- @Last Modified time: 2025-04-09 21:59:34
 --======================================================================--
 -- @作者: GGE研究群: 342119466
 -- @创建时间:   2018-03-03 02:34:19
@@ -27,6 +27,12 @@ local qyg = 引擎.取野怪
 
 function 场景类_假人:初始化(假人)
 	self.假人 ={}
+	if 假人.模型 == nil then
+		for k,v in pairs(假人) do
+			log_error(tostring(k)..",模型出错啦,"..tostring(v))
+		end
+		return
+	end
 	if 假人.锦衣 then
 		 local 资源=引擎.取普通锦衣模型(假人.锦衣,假人.模型,nil,假人.武器子类)
 		 self.假人 = {["静立"] = tp.资源:载入(资源[3],"网易WDF动画",资源[1]),["行走"] = tp.资源:载入(资源[3],"网易WDF动画",资源[2])}

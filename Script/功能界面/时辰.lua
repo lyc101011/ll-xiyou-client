@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-12-14 19:52:27
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2025-04-07 22:17:25
+-- @Last Modified time: 2025-04-10 00:09:56
 -- @Author: baidwwy
 -- @Date:   2024-06-13 16:59:55
 -- @Last Modified by:   baidwwy
@@ -19,6 +19,7 @@ local keyaz = 引擎.按键按住
 local keyax = 引擎.按键按下
 
 function 系统类_时辰:初始化(根)
+	log_error("时辰初始化")
 	local 资源 = 根.资源
 	local 按钮 = 根._按钮
 	self.序列=1

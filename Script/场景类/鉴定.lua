@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-12-14 19:52:27
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2024-12-16 11:19:05
+-- @Last Modified time: 2025-04-10 20:38:45
 -- @Author: baidwwy
 -- @Date:   2024-04-03 22:06:51
 -- @Last Modified by:   baidwwy
@@ -249,7 +249,7 @@ function 场景类_鉴定:显示(dt,x,y)
 							发送数据(3781.1,{道具格子=is})
 							self:打开()
 					elseif self.功能分类 == "武器附神" then---武器附神
-						if self.物品[is].物品.总类 == 2 and self.物品[is].物品.分类==3  then else tp.常规提示:打开("#W/少侠！只有“武器”才可以附神！") self:打开() return  end
+						if self.物品[is].物品.总类 == 2 and self.物品[is].物品.分类==3 or  self.物品[is].物品.分类==2 then else tp.常规提示:打开("#W/少侠！只有“武器”才可以附神！") self:打开() return  end
 						if self.物品[is].物品.鉴定 ==false then tp.常规提示:打开("#W/拿回去！该物品尚未鉴定！") self:打开() return end
 
 						发送数据(3738,{类型="武器附神",道具格子=is,符纸格子=self.符纸格子})

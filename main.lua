@@ -1,10 +1,27 @@
 -- @Author: baidwwy
 -- @Date:   2024-06-13 16:59:46
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2025-04-04 12:51:03
+-- @Last Modified time: 2025-04-10 20:38:51
 
 ffi = require("ffi")
 版本号=1.3
+
+local error_log = 'E:\\BaiduNetdiskDownload\\梦逍遥女帝18奇技\\梦逍遥客户端\\1.三界西游-客户端105\\Log\\error.log'
+
+function log_error(msg)
+	-- 打开文件（追加模式 "a"）
+	local file = io.open(error_log, "a")
+
+	if file then
+	    file:write(msg)
+	    file:close()
+	    print("日志已写入: " .. error_log)
+	else
+	    print("无法打开日志文件: " .. error_log)
+	end
+end
+
+
 local aa=版本号
 local function 窗口图标(参数_窗口句柄,参数_图标文件)
 	ffi.cdef[[
