@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-12-14 19:52:27
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2025-04-08 00:32:29
+-- @Last Modified time: 2025-04-13 00:44:13
 -- @Author: baidwwy
 -- @Date:   2024-08-21 11:43:36
 -- @Last Modified by:   baidwwy
@@ -1720,9 +1720,9 @@ elseif zls == 2 and item.灵饰==nil and item.召唤兽装备==nil and (item.分
 				end
 		else
 			if item.正负==1 then
-			 组合语句=item.类型.."+"..item.属性.."%"
+			 组合语句=tostring(item.类型).."+"..tostring(item.属性).."%"
 			else
-			 组合语句=item.类型.."-"..item.属性.."%"
+			 组合语句=tostring(item.类型).."-"..tostring(item.属性).."%"
 			end
 		end
 		self.道具文本:添加文本(format("#W/【属性影响】%s",组合语句))

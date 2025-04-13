@@ -1,7 +1,7 @@
 -- @Author: baidwwy
 -- @Date:   2024-06-13 16:59:55
 -- @Last Modified by:   baidwwy
--- @Last Modified time: 2024-12-27 22:23:22
+-- @Last Modified time: 2025-04-12 20:44:24
 --======================================================================--
 -- @作者: GGE研究群: 342119466
 -- @创建时间:   2018-03-03 02:34:19
@@ -27,6 +27,9 @@ local h,l
 -- local 测试 = false
 local maps
 local function 排序(a,b)
+	if a.坐标 == nil or b.坐标 == nil then
+		return false
+	end
 	if a.坐标.y==b.坐标.y then
 		if a.类型=="玩家" and b.类型=="玩家" then
 			return a.玩家ID>b.玩家ID
